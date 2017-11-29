@@ -1,3 +1,20 @@
-<h1><%= @user.name %></h1>
+<div class="user1">
+  <h1><%= @user.name %></h1>
+  <% if @user.questions.any? %>
+    <h4>Here are the question that this user has asked:</h4>
+  <table>
+    <tbody>
+      <% @user.questions.each do |question| %>
+        <tr>
 
-<p><%= link_to "Return to user", users_path %></p>
+          <td><%= question.description %></td>
+          <td><%= question.title %></td>
+          <td><%= question.tag %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+
+  <p><%= link_to "Return to user", users_path %></p>
+</div>

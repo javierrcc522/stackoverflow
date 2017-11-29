@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.column :language, :string
       t.column :image, :string
 
-      t.timestamps 
+      t.timestamps
     end
   end
 end

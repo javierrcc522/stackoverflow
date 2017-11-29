@@ -1,37 +1,16 @@
-<h1>Users</h1>
-<hr>
+<div class="user1">
+  <h1>Users</h1>
+  <hr>
 
-<div class="row">
-  <div class="col-sm-3">
-    <ul>
-      <% @users.each do |user| %>
-      <li><%= user.name %></li>
+  <% @users.each_slice(4) do |users| %>
+    <div class="row">
+      <% users.each do |user| %>
+        <div class="col-sm-3">
+          <p><%= image_tag user.image %></p>
+          <h1><%= link_to user.name, user_path(user) %></h1>
+          <h3><%= user.language %></h3>
+        </div>
       <% end %>
-    </ul>
-  </div>
-
-  <div class="col-sm-3">
-    <ul>
-      <% @users.each do |user| %>
-      <li><%= user.name %></li>
-      <% end %>
-    </ul>
-  </div>
-
-  <div class="col-sm-3">
-    <ul>
-      <% @users.each do |user| %>
-      <li><%= user.name %></li>
-      <% end %>
-    </ul>
-  </div>
-
-  <div class="col-sm-3">
-    <ul>
-      <% @users.each do |user| %>
-      <li><%= user.name %></li>
-      <% end %>
-    </ul>
-  </div>
-
+    </div>
+  <% end %>
 </div>
